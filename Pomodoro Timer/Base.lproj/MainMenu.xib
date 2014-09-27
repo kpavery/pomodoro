@@ -18,6 +18,14 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="q0p-dU-pGI" customClass="MainController">
+            <connections>
+                <outlet property="breakField" destination="aLi-Df-oTb" id="bKR-ut-A40"/>
+                <outlet property="breakStepper" destination="iO7-hx-eiN" id="DGm-Eg-Fja"/>
+                <outlet property="intervalField" destination="cZX-MV-qNc" id="Ygc-1c-vVc"/>
+                <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
+            </connections>
+        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="Pomodoro Timer" id="1Xt-HY-uBw">
@@ -165,27 +173,32 @@
                 <subviews>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-MV-qNc">
                         <rect key="frame" x="120" y="329" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="76F-Px-dqh">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="76F-Px-dqh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="Fzj-kj-ZrT"/>
+                        </connections>
                     </textField>
-                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
-                        <rect key="frame" x="185" y="326" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
-                    </stepper>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLi-Df-oTb">
                         <rect key="frame" x="120" y="299" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="1FE-iz-jAK">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="1FE-iz-jAK">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="5RV-AK-3Tn"/>
+                        </connections>
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
                         <rect key="frame" x="185" y="296" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ZYm-80-Zz3"/>
+                        <connections>
+                            <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="ABm-vz-ZDO"/>
+                        </connections>
                     </stepper>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1v-Gm-DdS">
                         <rect key="frame" x="18" y="332" width="96" height="17"/>
@@ -209,7 +222,17 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system" size="30"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="startTimer:" target="q0p-dU-pGI" id="POy-18-mY6"/>
+                        </connections>
                     </button>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
+                        <rect key="frame" x="185" y="326" width="19" height="27"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
+                        <connections>
+                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
+                        </connections>
+                    </stepper>
                 </subviews>
             </view>
             <point key="canvasLocation" x="173" y="456.5"/>

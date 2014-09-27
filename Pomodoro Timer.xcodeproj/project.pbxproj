@@ -12,6 +12,7 @@
 		058D52BE19D73940000783C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058D52BD19D73940000783C6 /* Images.xcassets */; };
 		058D52C119D73940000783C6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058D52BF19D73940000783C6 /* MainMenu.xib */; };
 		058D52CD19D73941000783C6 /* Pomodoro_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058D52CC19D73941000783C6 /* Pomodoro_TimerTests.m */; };
+		058D52DE19D74632000783C6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058D52DD19D74632000783C6 /* MainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		058D52C619D73941000783C6 /* Pomodoro TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		058D52CB19D73941000783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		058D52CC19D73941000783C6 /* Pomodoro_TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pomodoro_TimerTests.m; sourceTree = "<group>"; };
+		058D52DC19D74632000783C6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		058D52DD19D74632000783C6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				058D52BB19D73940000783C6 /* AppDelegate.m */,
 				058D52BD19D73940000783C6 /* Images.xcassets */,
 				058D52BF19D73940000783C6 /* MainMenu.xib */,
+				058D52DC19D74632000783C6 /* MainController.h */,
+				058D52DD19D74632000783C6 /* MainController.m */,
 				058D52B619D73940000783C6 /* Supporting Files */,
 			);
 			path = "Pomodoro Timer";
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058D52BC19D73940000783C6 /* AppDelegate.m in Sources */,
+				058D52DE19D74632000783C6 /* MainController.m in Sources */,
 				058D52B919D73940000783C6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
