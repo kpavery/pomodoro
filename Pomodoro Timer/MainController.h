@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+#import "iTunes.h"
+
 @interface MainController : NSObject
 
 @property (weak) IBOutlet NSTextField *intervalField;

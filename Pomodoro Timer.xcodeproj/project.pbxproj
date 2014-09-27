@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054C2B4C19D7505C0015E28A /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		058D52B319D73940000783C6 /* Pomodoro Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		058D52B719D73940000783C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		058D52B819D73940000783C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 				058D52BF19D73940000783C6 /* MainMenu.xib */,
 				058D52DC19D74632000783C6 /* MainController.h */,
 				058D52DD19D74632000783C6 /* MainController.m */,
+				054C2B4C19D7505C0015E28A /* iTunes.h */,
 				058D52B619D73940000783C6 /* Supporting Files */,
 			);
 			path = "Pomodoro Timer";
@@ -404,6 +406,7 @@
 				058D52D219D73941000783C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		058D52D319D73941000783C6 /* Build configuration list for PBXNativeTarget "Pomodoro TimerTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +415,7 @@
 				058D52D519D73941000783C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
