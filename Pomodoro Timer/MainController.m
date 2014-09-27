@@ -12,7 +12,7 @@
 
 - (IBAction)startTimer:(id)sender {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.intervalTime target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
-    [self.goButton setEnabled:NO];
+    [self.button setTitle:@"Stop"];
 }
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender {
@@ -33,14 +33,42 @@
     [self.breakStepper setIntegerValue:self.breakTime];
 }
 
+- (void)getiTunes {
+    if (!self.iTunes) {
+        NSLog(@"Getting iTunes");
+        self.iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    }
+}
+
 - (void)intervalTimerFired {
     NSLog(@"Interval timer fired.");
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.breakTime target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
+    
+    [self getiTunes];
+    if ([self.iTunes isRunning]) {
+        NSLog(@"Found iTunes running.");
+        if ([self.iTunes playerState] == iTunesEPlSPlaying) {
+            NSLog(@"Paused iTunes");
+            [self.iTunes playpause];
+        }
+    }
 }
 
 - (void)breakTimerFired {
     NSLog(@"Break timer fired.");
-    [self.goButton setEnabled:YES];
+    
+    [self.button setTitle:@"Go"];
+    
+    [self getiTunes];
+    if ([self.iTunes isRunning]) {
+        NSLog(@"Found iTunes running.");
+        if ([self.iTunes playerState] == iTunesEPlSPaused) {
+            NSLog(@"Unpaused iTunes");
+            [self.iTunes playpause];
+        }
+    }
+
 }
 
 @end

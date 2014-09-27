@@ -19,17 +19,20 @@
 @property (weak) IBOutlet NSTextField *breakField;
 @property (weak) IBOutlet NSStepper *breakStepper;
 
-@property (weak) IBOutlet NSButton *goButton;
+@property (weak) IBOutlet NSButton *button;
 
 @property NSInteger intervalTime;
 @property NSInteger breakTime;
 
-@property (weak) NSTimer *timer;
+@property NSTimer *timer;
+
+@property iTunesApplication *iTunes;
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender;
 - (IBAction)takeIntegerValueForBreakFrom:(id)sender;
 
 - (void)updateUserInterface;
+- (void)getiTunes;
 - (void)intervalTimerFired;
 - (void)breakTimerFired;
 

@@ -22,6 +22,7 @@
             <connections>
                 <outlet property="breakField" destination="aLi-Df-oTb" id="bKR-ut-A40"/>
                 <outlet property="breakStepper" destination="iO7-hx-eiN" id="DGm-Eg-Fja"/>
+                <outlet property="button" destination="9xA-JH-T2o" id="okc-iu-cuF"/>
                 <outlet property="goButton" destination="9xA-JH-T2o" id="82d-Qd-FEK"/>
                 <outlet property="intervalField" destination="cZX-MV-qNc" id="Ygc-1c-vVc"/>
                 <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
@@ -217,8 +218,15 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
+                        <rect key="frame" x="185" y="326" width="19" height="27"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
+                        <connections>
+                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
+                        </connections>
+                    </stepper>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-JH-T2o">
-                        <rect key="frame" x="70" y="239" width="80" height="53"/>
+                        <rect key="frame" x="58" y="239" width="100" height="53"/>
                         <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dK7-HH-2x6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system" size="30"/>
@@ -227,13 +235,6 @@
                             <action selector="startTimer:" target="q0p-dU-pGI" id="POy-18-mY6"/>
                         </connections>
                     </button>
-                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
-                        <rect key="frame" x="185" y="326" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
-                        <connections>
-                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
-                        </connections>
-                    </stepper>
                 </subviews>
             </view>
             <point key="canvasLocation" x="173" y="456.5"/>
