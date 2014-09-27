@@ -69,7 +69,7 @@
 - (void)intervalTimerFired {
     NSLog(@"Interval timer fired.");
     
-    NSInteger breakTimeInSeconds = self.breakTime * 1;
+    NSInteger breakTimeInSeconds = self.breakTime * 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:breakTimeInSeconds target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
     
     [self.status setStringValue:@"Break"];
@@ -89,7 +89,7 @@
 - (void)breakTimerFired {
     NSLog(@"Break timer fired.");
     
-    NSInteger intervalTimeInSeconds = self.intervalTime * 1;
+    NSInteger intervalTimeInSeconds = self.intervalTime * 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:intervalTimeInSeconds target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
     
     [self.status setStringValue:@"Interval"];
