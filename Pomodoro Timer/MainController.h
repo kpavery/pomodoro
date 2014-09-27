@@ -21,6 +21,9 @@
 
 @property (weak) IBOutlet NSButton *button;
 
+@property (weak) IBOutlet NSTextField *status;
+@property (weak) IBOutlet NSProgressIndicator *progressBar;
+
 @property NSInteger intervalTime;
 @property NSInteger breakTime;
 
@@ -35,5 +38,7 @@
 - (void)getiTunes;
 - (void)intervalTimerFired;
 - (void)breakTimerFired;
+
+- (void)updateProgressBarForSeconds:(NSInteger)seconds;
 
 @end
