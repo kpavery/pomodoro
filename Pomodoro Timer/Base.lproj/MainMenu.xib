@@ -175,7 +175,7 @@
                 <subviews>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
                         <rect key="frame" x="185" y="299" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ZYm-80-Zz3"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="5" id="ZYm-80-Zz3"/>
                         <connections>
                             <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="ABm-vz-ZDO"/>
                         </connections>
@@ -198,14 +198,14 @@
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
                         <rect key="frame" x="185" y="329" width="19" height="27"/>
-                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="25" id="Ofq-7O-37c"/>
                         <connections>
                             <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
                         </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-8c-XKZ">
                         <rect key="frame" x="120" y="302" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="3t6-Wf-gfv">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="3t6-Wf-gfv">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="CS4-FG-m0W">
                                 <real key="minimum" value="0.0"/>
                                 <real key="maximum" value="100"/>
@@ -220,7 +220,7 @@
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-mL-7Hq">
                         <rect key="frame" x="120" y="330" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="Nn6-jz-Hh7">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="25" drawsBackground="YES" id="Nn6-jz-Hh7">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dvt-zE-lEE">
                                 <real key="minimum" value="0.0"/>
                                 <real key="maximum" value="100"/>

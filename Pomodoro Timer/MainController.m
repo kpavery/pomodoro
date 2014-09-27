@@ -10,6 +10,15 @@
 
 @implementation MainController
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.intervalTime = 25;
+        self.breakTime = 5;
+    }
+    return self;
+}
+
 - (IBAction)buttonPressed:(id)sender {
     if (!self.timer) {
         [self.button setTitle:@"Stop"];
