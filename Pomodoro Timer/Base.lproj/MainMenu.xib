@@ -165,23 +165,23 @@
         </menu>
         <window title="Pomodoro Timer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="216" height="371"/>
+            <rect key="contentRect" x="335" y="390" width="221" height="374"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="216" height="371"/>
             <value key="maxSize" type="size" width="216" height="370"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="216" height="371"/>
+                <rect key="frame" x="0.0" y="0.0" width="221" height="374"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
-                        <rect key="frame" x="185" y="296" width="19" height="27"/>
+                        <rect key="frame" x="185" y="299" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ZYm-80-Zz3"/>
                         <connections>
                             <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="ABm-vz-ZDO"/>
                         </connections>
                     </stepper>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1v-Gm-DdS">
-                        <rect key="frame" x="18" y="332" width="96" height="17"/>
+                        <rect key="frame" x="18" y="335" width="96" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Interval Length" id="uWc-u0-Zbh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -189,7 +189,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-2o-GNf">
-                        <rect key="frame" x="28" y="302" width="86" height="17"/>
+                        <rect key="frame" x="28" y="305" width="86" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Break Length" id="Bcg-Zi-xgv">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -197,24 +197,14 @@
                         </textFieldCell>
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
-                        <rect key="frame" x="185" y="326" width="19" height="27"/>
+                        <rect key="frame" x="185" y="329" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="Ofq-7O-37c"/>
                         <connections>
                             <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
                         </connections>
                     </stepper>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-JH-T2o">
-                        <rect key="frame" x="58" y="239" width="100" height="53"/>
-                        <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dK7-HH-2x6">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system" size="30"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="startTimer:" target="q0p-dU-pGI" id="POy-18-mY6"/>
-                        </connections>
-                    </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-8c-XKZ">
-                        <rect key="frame" x="120" y="299" width="60" height="22"/>
+                        <rect key="frame" x="120" y="302" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="3t6-Wf-gfv">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="CS4-FG-m0W">
                                 <real key="minimum" value="0.0"/>
@@ -229,7 +219,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-mL-7Hq">
-                        <rect key="frame" x="120" y="327" width="60" height="22"/>
+                        <rect key="frame" x="120" y="330" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="Nn6-jz-Hh7">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dvt-zE-lEE">
                                 <real key="minimum" value="0.0"/>
@@ -246,9 +236,19 @@
                             <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="8WX-ue-F45"/>
                         </connections>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-JH-T2o">
+                        <rect key="frame" x="60" y="242" width="100" height="53"/>
+                        <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dK7-HH-2x6">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="30"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buttonPressed:" target="q0p-dU-pGI" id="yPd-lB-Tmk"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="173" y="456.5"/>
+            <point key="canvasLocation" x="175.5" y="458"/>
         </window>
     </objects>
 </document>

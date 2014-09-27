@@ -10,9 +10,16 @@
 
 @implementation MainController
 
-- (IBAction)startTimer:(id)sender {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.intervalTime target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
-    [self.button setTitle:@"Stop"];
+- (IBAction)buttonPressed:(id)sender {
+    if (!self.timer) {
+        [self.button setTitle:@"Stop"];
+        [self breakTimerFired];
+    } else {
+        NSLog(@"Timer removed.");
+        [self.timer invalidate];
+        self.timer = nil;
+        [self.button setTitle:@"Go"];
+    }
 }
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender {
@@ -47,7 +54,6 @@
     
     [self getiTunes];
     if ([self.iTunes isRunning]) {
-        NSLog(@"Found iTunes running.");
         if ([self.iTunes playerState] == iTunesEPlSPlaying) {
             NSLog(@"Paused iTunes");
             [self.iTunes playpause];
@@ -58,17 +64,15 @@
 - (void)breakTimerFired {
     NSLog(@"Break timer fired.");
     
-    [self.button setTitle:@"Go"];
-    
     [self getiTunes];
     if ([self.iTunes isRunning]) {
-        NSLog(@"Found iTunes running.");
         if ([self.iTunes playerState] == iTunesEPlSPaused) {
             NSLog(@"Unpaused iTunes");
             [self.iTunes playpause];
         }
     }
-
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.intervalTime target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
 }
 
 @end
