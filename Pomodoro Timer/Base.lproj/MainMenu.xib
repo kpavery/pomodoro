@@ -257,11 +257,11 @@
                         </textFieldCell>
                     </textField>
                     <progressIndicator hidden="YES" fixedFrame="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-BH-KYv">
-                        <rect key="frame" x="20" y="19" width="181" height="22"/>
+                        <rect key="frame" x="20" y="19" width="181" height="20"/>
                     </progressIndicator>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="175.5" y="380"/>
+            <point key="canvasLocation" x="175.5" y="378"/>
         </window>
     </objects>
 </document>
