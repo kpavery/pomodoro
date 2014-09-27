@@ -20,11 +20,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="q0p-dU-pGI" customClass="MainController">
             <connections>
-                <outlet property="breakField" destination="aLi-Df-oTb" id="bKR-ut-A40"/>
+                <outlet property="breakField" destination="2Ls-8c-XKZ" id="Lcb-cO-KwR"/>
                 <outlet property="breakStepper" destination="iO7-hx-eiN" id="DGm-Eg-Fja"/>
                 <outlet property="button" destination="9xA-JH-T2o" id="okc-iu-cuF"/>
                 <outlet property="goButton" destination="9xA-JH-T2o" id="82d-Qd-FEK"/>
-                <outlet property="intervalField" destination="cZX-MV-qNc" id="Ygc-1c-vVc"/>
+                <outlet property="intervalField" destination="9b6-mL-7Hq" id="QUA-Or-Dmi"/>
                 <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
             </connections>
         </customObject>
@@ -173,28 +173,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="216" height="371"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-MV-qNc">
-                        <rect key="frame" x="120" y="329" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="76F-Px-dqh">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="Fzj-kj-ZrT"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLi-Df-oTb">
-                        <rect key="frame" x="120" y="299" width="60" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="1FE-iz-jAK">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="5RV-AK-3Tn"/>
-                        </connections>
-                    </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
                         <rect key="frame" x="185" y="296" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ZYm-80-Zz3"/>
@@ -235,6 +213,39 @@
                             <action selector="startTimer:" target="q0p-dU-pGI" id="POy-18-mY6"/>
                         </connections>
                     </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-8c-XKZ">
+                        <rect key="frame" x="120" y="299" width="60" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="3t6-Wf-gfv">
+                            <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="CS4-FG-m0W">
+                                <real key="minimum" value="0.0"/>
+                                <real key="maximum" value="100"/>
+                            </numberFormatter>
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="h1t-gn-oqA"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-mL-7Hq">
+                        <rect key="frame" x="120" y="327" width="60" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="Nn6-jz-Hh7">
+                            <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dvt-zE-lEE">
+                                <real key="minimum" value="0.0"/>
+                                <real key="maximum" value="100"/>
+                                <metadata>
+                                    <real key="inspectorSampleValue" value="1"/>
+                                </metadata>
+                            </numberFormatter>
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="8WX-ue-F45"/>
+                        </connections>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="173" y="456.5"/>
