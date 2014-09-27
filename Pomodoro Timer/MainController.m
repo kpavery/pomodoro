@@ -50,7 +50,7 @@
 - (void)intervalTimerFired {
     NSLog(@"Interval timer fired.");
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.breakTime target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:(self.breakTime*60) target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
     
     [self getiTunes];
     if ([self.iTunes isRunning]) {
@@ -72,7 +72,7 @@
         }
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.intervalTime target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:(self.intervalTime*60) target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
 }
 
 @end
