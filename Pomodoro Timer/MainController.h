@@ -17,11 +17,18 @@
 @property (weak) IBOutlet NSTextField *breakField;
 @property (weak) IBOutlet NSStepper *breakStepper;
 
+@property (weak) IBOutlet NSButton *goButton;
+
 @property NSInteger intervalTime;
 @property NSInteger breakTime;
 
+@property (weak) NSTimer *timer;
+
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender;
 - (IBAction)takeIntegerValueForBreakFrom:(id)sender;
--(void)updateUserInterface;
+
+- (void)updateUserInterface;
+- (void)intervalTimerFired;
+- (void)breakTimerFired;
 
 @end

@@ -11,6 +11,8 @@
 @implementation MainController
 
 - (IBAction)startTimer:(id)sender {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.intervalTime target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
+    [self.goButton setEnabled:NO];
 }
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender {
@@ -23,12 +25,22 @@
     [self updateUserInterface];
 }
 
--(void)updateUserInterface {
+- (void)updateUserInterface {
     [self.intervalField setIntegerValue:self.intervalTime];
     [self.intervalStepper setIntegerValue:self.intervalTime];
     
     [self.breakField setIntegerValue:self.breakTime];
     [self.breakStepper setIntegerValue:self.breakTime];
+}
+
+- (void)intervalTimerFired {
+    NSLog(@"Interval timer fired.");
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.breakTime target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
+}
+
+- (void)breakTimerFired {
+    NSLog(@"Break timer fired.");
+    [self.goButton setEnabled:YES];
 }
 
 @end

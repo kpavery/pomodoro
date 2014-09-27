@@ -22,6 +22,7 @@
             <connections>
                 <outlet property="breakField" destination="aLi-Df-oTb" id="bKR-ut-A40"/>
                 <outlet property="breakStepper" destination="iO7-hx-eiN" id="DGm-Eg-Fja"/>
+                <outlet property="goButton" destination="9xA-JH-T2o" id="82d-Qd-FEK"/>
                 <outlet property="intervalField" destination="cZX-MV-qNc" id="Ygc-1c-vVc"/>
                 <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
             </connections>
