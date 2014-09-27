@@ -109,6 +109,8 @@
 - (void)updateProgressBarForSeconds:(NSInteger)seconds {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         for (int i = 1; i < seconds; i++) {
+            if (!self.timer)
+                break;
             sleep(1);
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [self.progressBar setDoubleValue:(double)i/((double)seconds-1.0)];
