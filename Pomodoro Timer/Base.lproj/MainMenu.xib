@@ -243,7 +243,7 @@
                             <font key="font" metaFont="system" size="30"/>
                         </buttonCell>
                         <connections>
-                            <action selector="buttonPressed:" target="q0p-dU-pGI" id="yPd-lB-Tmk"/>
+                            <action selector="startTimer:" target="q0p-dU-pGI" id="POy-18-mY6"/>
                         </connections>
                     </button>
                 </subviews>
