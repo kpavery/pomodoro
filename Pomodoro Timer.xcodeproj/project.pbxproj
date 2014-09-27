@@ -80,9 +80,9 @@
 		058D52B519D73940000783C6 /* Pomodoro Timer */ = {
 			isa = PBXGroup;
 			children = (
+				058D52BD19D73940000783C6 /* Images.xcassets */,
 				058D52BA19D73940000783C6 /* AppDelegate.h */,
 				058D52BB19D73940000783C6 /* AppDelegate.m */,
-				058D52BD19D73940000783C6 /* Images.xcassets */,
 				058D52BF19D73940000783C6 /* MainMenu.xib */,
 				058D52DC19D74632000783C6 /* MainController.h */,
 				058D52DD19D74632000783C6 /* MainController.m */,
