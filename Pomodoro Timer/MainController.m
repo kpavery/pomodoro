@@ -25,6 +25,11 @@
         
         [self.progressBar setHidden:NO];
         [self.status setHidden:NO];
+		
+		[self.intervalField setEnabled:NO];
+		[self.intervalStepper setEnabled:NO];
+		[self.breakField setEnabled:NO];
+		[self.breakStepper setEnabled:NO];
         
         [self breakTimerFired];
     } else {
@@ -38,6 +43,14 @@
         [self.status setStringValue:@"Not running"];
         [self.status setTextColor:[NSColor blackColor]];
         [self.status setHidden:YES];
+		
+		[self.intervalField setEnabled:YES];
+		[self.intervalStepper setEnabled:YES];
+		[self.breakField setEnabled:YES];
+		[self.breakStepper setEnabled:YES];
+		
+		NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
+		[center removeAllDeliveredNotifications];
     }
 }
 
@@ -79,9 +92,10 @@
 	
 	NSUserNotification* notification = [[NSUserNotification alloc] init];
 	[notification setTitle:@"Break"];
-	[notification setInformativeText:[NSString stringWithFormat:@"Take a break for %li minutes.",(long)self.breakTime]];
+	[notification setInformativeText:[NSString stringWithFormat:@"Rest for %li minutes.",(long)self.breakTime]];
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
+	[center removeAllDeliveredNotifications];
 	[center deliverNotification:notification];
     
     [self getiTunes];
@@ -109,6 +123,7 @@
 	[notification setInformativeText:[NSString stringWithFormat:@"Work for %li minutes.",(long)self.breakTime]];
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
+	[center removeAllDeliveredNotifications];
 	[center deliverNotification:notification];
 	
     [self getiTunes];
