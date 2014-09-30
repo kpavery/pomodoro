@@ -15,6 +15,7 @@
     if (self) {
         self.intervalTime = 25;
         self.breakTime = 5;
+		self.notifications = YES;
     }
     return self;
 }
@@ -30,6 +31,7 @@
 		[self.intervalStepper setEnabled:NO];
 		[self.breakField setEnabled:NO];
 		[self.breakStepper setEnabled:NO];
+		[self.notificationsButton setEnabled:NO];
         
         [self breakTimerFired];
     } else {
@@ -48,11 +50,17 @@
 		[self.intervalStepper setEnabled:YES];
 		[self.breakField setEnabled:YES];
 		[self.breakStepper setEnabled:YES];
+		[self.notificationsButton setEnabled:YES];
 		
 		NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
 		[center removeAllDeliveredNotifications];
     }
 }
+
+- (IBAction)toggleNotifications:(id)sender {
+	self.notifications = !self.notifications;
+}
+
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender {
     self.intervalTime = [sender intValue];
@@ -96,8 +104,10 @@
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
 	[center removeAllDeliveredNotifications];
-	[center deliverNotification:notification];
-    
+	if (self.notifications) {
+		[center deliverNotification:notification];
+	}
+	
     [self getiTunes];
     if ([self.iTunes isRunning]) {
         if ([self.iTunes playerState] == iTunesEPlSPlaying) {
@@ -124,7 +134,9 @@
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
 	[center removeAllDeliveredNotifications];
-	[center deliverNotification:notification];
+	if (self.notifications) {
+		[center deliverNotification:notification];
+	}
 	
     [self getiTunes];
     if ([self.iTunes isRunning]) {

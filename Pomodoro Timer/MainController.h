@@ -23,9 +23,11 @@
 
 @property (weak) IBOutlet NSTextField *status;
 @property (weak) IBOutlet NSProgressIndicator *progressBar;
+@property (weak) IBOutlet NSButton *notificationsButton;
 
 @property NSInteger intervalTime;
 @property NSInteger breakTime;
+@property BOOL notifications;
 
 @property NSTimer *timer;
 

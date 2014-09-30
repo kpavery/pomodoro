@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="101000" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
@@ -26,6 +25,8 @@
                 <outlet property="goButton" destination="9xA-JH-T2o" id="82d-Qd-FEK"/>
                 <outlet property="intervalField" destination="9b6-mL-7Hq" id="QUA-Or-Dmi"/>
                 <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
+                <outlet property="notifications" destination="1fq-pa-lub" id="6BT-tr-9Dc"/>
+                <outlet property="notificationsButton" destination="1fq-pa-lub" id="5Bh-Lf-p3z"/>
                 <outlet property="progressBar" destination="RRu-BH-KYv" id="pMf-PJ-IWa"/>
                 <outlet property="status" destination="uF0-ZP-c59" id="f0z-wk-jAN"/>
             </connections>
@@ -167,23 +168,23 @@
         </menu>
         <window title="Pomodoro Timer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="221" height="218"/>
+            <rect key="contentRect" x="335" y="390" width="221" height="242"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="216" height="371"/>
             <value key="maxSize" type="size" width="216" height="370"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="221" height="218"/>
+                <rect key="frame" x="0.0" y="0.0" width="221" height="242"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
-                        <rect key="frame" x="185" y="143" width="19" height="27"/>
+                        <rect key="frame" x="185" y="167" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="5" id="ZYm-80-Zz3"/>
                         <connections>
                             <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="ABm-vz-ZDO"/>
                         </connections>
                     </stepper>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1v-Gm-DdS">
-                        <rect key="frame" x="18" y="179" width="96" height="17"/>
+                        <rect key="frame" x="18" y="203" width="96" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Interval Length" id="uWc-u0-Zbh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -191,7 +192,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-2o-GNf">
-                        <rect key="frame" x="28" y="149" width="86" height="17"/>
+                        <rect key="frame" x="28" y="173" width="86" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Break Length" id="Bcg-Zi-xgv">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -199,14 +200,14 @@
                         </textFieldCell>
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
-                        <rect key="frame" x="185" y="173" width="19" height="27"/>
+                        <rect key="frame" x="185" y="197" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="25" id="Ofq-7O-37c"/>
                         <connections>
                             <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
                         </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-8c-XKZ">
-                        <rect key="frame" x="120" y="146" width="60" height="22"/>
+                        <rect key="frame" x="120" y="170" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="3t6-Wf-gfv">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="CS4-FG-m0W">
                                 <real key="minimum" value="0.0"/>
@@ -221,7 +222,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-mL-7Hq">
-                        <rect key="frame" x="120" y="174" width="60" height="22"/>
+                        <rect key="frame" x="120" y="198" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="25" drawsBackground="YES" id="Nn6-jz-Hh7">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dvt-zE-lEE">
                                 <real key="minimum" value="0.0"/>
@@ -239,7 +240,7 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-JH-T2o">
-                        <rect key="frame" x="60" y="86" width="100" height="53"/>
+                        <rect key="frame" x="60" y="81" width="100" height="53"/>
                         <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dK7-HH-2x6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system" size="30"/>
@@ -259,9 +260,19 @@
                     <progressIndicator hidden="YES" fixedFrame="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-BH-KYv">
                         <rect key="frame" x="20" y="19" width="181" height="20"/>
                     </progressIndicator>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fq-pa-lub">
+                        <rect key="frame" x="60" y="139" width="100" height="25"/>
+                        <buttonCell key="cell" type="check" title="Notifications" bezelStyle="regularSquare" imagePosition="right" alignment="left" state="on" inset="2" id="LaD-4O-qMj">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleNotifications:" target="q0p-dU-pGI" id="B23-UM-IxX"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="175.5" y="378"/>
+            <point key="canvasLocation" x="175.5" y="390"/>
         </window>
     </objects>
 </document>
