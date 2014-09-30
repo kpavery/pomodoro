@@ -69,13 +69,20 @@
 - (void)intervalTimerFired {
     NSLog(@"Interval timer fired.");
     
-    NSInteger breakTimeInSeconds = self.breakTime * 60;
+    NSInteger breakTimeInSeconds = self.breakTime * 1;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:breakTimeInSeconds target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
     
     [self.status setStringValue:@"Break"];
     [self.status setTextColor:[NSColor colorWithCalibratedRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
     [self.progressBar setDoubleValue:0.0];
     [self updateProgressBarForSeconds:breakTimeInSeconds];
+	
+	NSUserNotification* notification = [[NSUserNotification alloc] init];
+	[notification setTitle:@"Break"];
+	[notification setInformativeText:[NSString stringWithFormat:@"Take a break for %li minutes.",(long)self.breakTime]];
+	
+	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
+	[center deliverNotification:notification];
     
     [self getiTunes];
     if ([self.iTunes isRunning]) {
@@ -89,14 +96,21 @@
 - (void)breakTimerFired {
     NSLog(@"Break timer fired.");
     
-    NSInteger intervalTimeInSeconds = self.intervalTime * 60;
+    NSInteger intervalTimeInSeconds = self.intervalTime * 1;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:intervalTimeInSeconds target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
     
     [self.status setStringValue:@"Interval"];
     [self.status setTextColor:[NSColor colorWithCalibratedRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
     [self.progressBar setDoubleValue:0.0];
     [self updateProgressBarForSeconds:intervalTimeInSeconds];
-    
+	
+	NSUserNotification* notification = [[NSUserNotification alloc] init];
+	[notification setTitle:@"Interval"];
+	[notification setInformativeText:[NSString stringWithFormat:@"Work for %li minutes.",(long)self.breakTime]];
+	
+	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
+	[center deliverNotification:notification];
+	
     [self getiTunes];
     if ([self.iTunes isRunning]) {
         if ([self.iTunes playerState] == iTunesEPlSPaused) {
