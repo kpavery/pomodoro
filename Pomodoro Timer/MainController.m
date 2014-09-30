@@ -154,9 +154,11 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         while (self.timer) {
             sleep(1);
+			
 			int length = self.endTime - self.startTime;
 			int position = [NSDate timeIntervalSinceReferenceDate] - self.startTime;
 			double newProgress = (double)position/(double)length;
+			
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [self.progressBar setDoubleValue:newProgress];
             });
