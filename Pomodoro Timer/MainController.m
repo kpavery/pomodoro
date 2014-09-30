@@ -133,7 +133,7 @@
 	
 	NSUserNotification* notification = [[NSUserNotification alloc] init];
 	[notification setTitle:@"Interval"];
-	[notification setInformativeText:[NSString stringWithFormat:@"Work for %li minutes.",(long)self.breakTime]];
+	[notification setInformativeText:[NSString stringWithFormat:@"Work for %li minutes.",(long)self.intervalTime]];
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
 	[center removeAllDeliveredNotifications];
