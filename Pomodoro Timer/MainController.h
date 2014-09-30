@@ -31,6 +31,9 @@
 
 @property NSTimer *timer;
 
+@property NSTimeInterval startTime;
+@property NSTimeInterval endTime;
+
 @property iTunesApplication *iTunes;
 
 - (IBAction)takeIntegerValueForIntervalFrom:(id)sender;
@@ -41,6 +44,6 @@
 - (void)intervalTimerFired;
 - (void)breakTimerFired;
 
-- (void)updateProgressBarForSeconds:(NSInteger)seconds;
+- (void)progressBarUpdater;
 
 @end

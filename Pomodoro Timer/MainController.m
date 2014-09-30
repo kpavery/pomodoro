@@ -34,6 +34,7 @@
 		[self.notificationsButton setEnabled:NO];
         
         [self breakTimerFired];
+		[self progressBarUpdater];
     } else {
         NSLog(@"Timer removed.");
         [self.timer invalidate];
@@ -92,11 +93,12 @@
     
     NSInteger breakTimeInSeconds = self.breakTime * 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:breakTimeInSeconds target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
+	self.startTime = [NSDate timeIntervalSinceReferenceDate];
+	self.endTime = self.startTime + breakTimeInSeconds;
     
     [self.status setStringValue:@"Break"];
     [self.status setTextColor:[NSColor colorWithCalibratedRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
     [self.progressBar setDoubleValue:0.0];
-    [self updateProgressBarForSeconds:breakTimeInSeconds];
 	
 	NSUserNotification* notification = [[NSUserNotification alloc] init];
 	[notification setTitle:@"Break"];
@@ -122,11 +124,12 @@
     
     NSInteger intervalTimeInSeconds = self.intervalTime * 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:intervalTimeInSeconds target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
+	self.startTime = [NSDate timeIntervalSinceReferenceDate];
+	self.endTime = self.startTime + intervalTimeInSeconds;
     
     [self.status setStringValue:@"Interval"];
     [self.status setTextColor:[NSColor colorWithCalibratedRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
     [self.progressBar setDoubleValue:0.0];
-    [self updateProgressBarForSeconds:intervalTimeInSeconds];
 	
 	NSUserNotification* notification = [[NSUserNotification alloc] init];
 	[notification setTitle:@"Interval"];
@@ -147,14 +150,13 @@
     }
 }
 
-- (void)updateProgressBarForSeconds:(NSInteger)seconds {
+- (void)progressBarUpdater {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        for (int i = 1; i < seconds; i++) {
-			double newProgress = (double)i/((double)seconds-1.0);
-			double oldProgress = ((double)i-1.0)/((double)seconds-1.0);
-            if (!self.timer || [self.progressBar doubleValue] != oldProgress)
-                break;
+        while (self.timer) {
             sleep(1);
+			int length = self.endTime - self.startTime;
+			int position = [NSDate timeIntervalSinceReferenceDate] - self.startTime;
+			double newProgress = (double)position/(double)length;
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [self.progressBar setDoubleValue:newProgress];
             });
