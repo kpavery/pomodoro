@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -22,11 +22,11 @@
                 <outlet property="breakField" destination="2Ls-8c-XKZ" id="Lcb-cO-KwR"/>
                 <outlet property="breakStepper" destination="iO7-hx-eiN" id="DGm-Eg-Fja"/>
                 <outlet property="button" destination="9xA-JH-T2o" id="okc-iu-cuF"/>
-                <outlet property="goButton" destination="9xA-JH-T2o" id="82d-Qd-FEK"/>
                 <outlet property="intervalField" destination="9b6-mL-7Hq" id="QUA-Or-Dmi"/>
                 <outlet property="intervalStepper" destination="O0U-mP-ANz" id="NUk-Ia-8bW"/>
-                <outlet property="notifications" destination="1fq-pa-lub" id="6BT-tr-9Dc"/>
                 <outlet property="notificationsButton" destination="1fq-pa-lub" id="5Bh-Lf-p3z"/>
+                <outlet property="pomodorosThisSession" destination="9OR-kT-6Zu" id="ZaZ-pT-3ZM"/>
+                <outlet property="pomodorosToday" destination="giT-FJ-O0b" id="c3I-Iy-PaB"/>
                 <outlet property="progressBar" destination="RRu-BH-KYv" id="pMf-PJ-IWa"/>
                 <outlet property="status" destination="uF0-ZP-c59" id="f0z-wk-jAN"/>
             </connections>
@@ -168,23 +168,23 @@
         </menu>
         <window title="Pomodoro Timer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="221" height="242"/>
+            <rect key="contentRect" x="335" y="390" width="221" height="294"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <value key="minSize" type="size" width="216" height="371"/>
-            <value key="maxSize" type="size" width="216" height="370"/>
+            <value key="minSize" type="size" width="221" height="294"/>
+            <value key="maxSize" type="size" width="221" height="294"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="221" height="242"/>
+                <rect key="frame" x="0.0" y="0.0" width="221" height="294"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iO7-hx-eiN">
-                        <rect key="frame" x="185" y="167" width="19" height="27"/>
+                        <rect key="frame" x="185" y="219" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="5" id="ZYm-80-Zz3"/>
                         <connections>
                             <action selector="takeIntegerValueForBreakFrom:" target="q0p-dU-pGI" id="ABm-vz-ZDO"/>
                         </connections>
                     </stepper>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1v-Gm-DdS">
-                        <rect key="frame" x="18" y="203" width="96" height="17"/>
+                        <rect key="frame" x="18" y="255" width="96" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Interval Length" id="uWc-u0-Zbh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -192,7 +192,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-2o-GNf">
-                        <rect key="frame" x="28" y="173" width="86" height="17"/>
+                        <rect key="frame" x="28" y="225" width="86" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Break Length" id="Bcg-Zi-xgv">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -200,14 +200,14 @@
                         </textFieldCell>
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-mP-ANz">
-                        <rect key="frame" x="185" y="197" width="19" height="27"/>
+                        <rect key="frame" x="185" y="249" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="25" id="Ofq-7O-37c"/>
                         <connections>
                             <action selector="takeIntegerValueForIntervalFrom:" target="q0p-dU-pGI" id="eXf-3V-Fis"/>
                         </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-8c-XKZ">
-                        <rect key="frame" x="120" y="170" width="60" height="22"/>
+                        <rect key="frame" x="120" y="222" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="3t6-Wf-gfv">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="CS4-FG-m0W">
                                 <real key="minimum" value="0.0"/>
@@ -222,7 +222,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-mL-7Hq">
-                        <rect key="frame" x="120" y="198" width="60" height="22"/>
+                        <rect key="frame" x="120" y="250" width="60" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="25" drawsBackground="YES" id="Nn6-jz-Hh7">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="dvt-zE-lEE">
                                 <real key="minimum" value="0.0"/>
@@ -240,7 +240,7 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-JH-T2o">
-                        <rect key="frame" x="60" y="81" width="100" height="53"/>
+                        <rect key="frame" x="60" y="133" width="100" height="53"/>
                         <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dK7-HH-2x6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system" size="30"/>
@@ -250,7 +250,7 @@
                         </connections>
                     </button>
                     <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uF0-ZP-c59">
-                        <rect key="frame" x="70" y="47" width="81" height="17"/>
+                        <rect key="frame" x="70" y="99" width="81" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Not Running" id="XAk-tw-JN0">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -258,10 +258,10 @@
                         </textFieldCell>
                     </textField>
                     <progressIndicator hidden="YES" fixedFrame="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-BH-KYv">
-                        <rect key="frame" x="20" y="19" width="181" height="20"/>
+                        <rect key="frame" x="20" y="71" width="181" height="20"/>
                     </progressIndicator>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fq-pa-lub">
-                        <rect key="frame" x="60" y="139" width="100" height="25"/>
+                        <rect key="frame" x="60" y="191" width="100" height="25"/>
                         <buttonCell key="cell" type="check" title="Notifications" bezelStyle="regularSquare" imagePosition="right" alignment="left" state="on" inset="2" id="LaD-4O-qMj">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -270,9 +270,41 @@
                             <action selector="toggleNotifications:" target="q0p-dU-pGI" id="B23-UM-IxX"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-Rh-hH0">
+                        <rect key="frame" x="44" y="47" width="152" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="pomodoros this session" id="SgE-HH-3w1">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-kT-6Zu">
+                        <rect key="frame" x="24" y="47" width="20" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0" id="iJg-GG-WsE">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5O-UW-ywa">
+                        <rect key="frame" x="64" y="22" width="113" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="pomodoros today" id="a1D-OW-OtB">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giT-FJ-O0b">
+                        <rect key="frame" x="44" y="22" width="20" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0" id="3Cm-Mp-739">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="175.5" y="390"/>
+            <point key="canvasLocation" x="175.5" y="416"/>
         </window>
     </objects>
 </document>

@@ -90,8 +90,22 @@
 
 - (void)intervalTimerFired {
     NSLog(@"Interval timer fired.");
+	
+	NSInteger numPomodorosToday = [self.pomodorosToday integerValue];
+	numPomodorosToday++;
+	[self.pomodorosToday setIntegerValue:numPomodorosToday];
+	
+	NSInteger numPomodorosSession = [self.pomodorosThisSession integerValue];
+	numPomodorosSession++;
+	[self.pomodorosThisSession setIntegerValue:numPomodorosSession];
+	
     
     NSInteger breakTimeInSeconds = self.breakTime * 60;
+	
+	// Every fourth pomodoro, take a longer break (3 times as long)
+	if (numPomodorosSession % 4 == 0)
+		breakTimeInSeconds *= 3;
+	
     self.timer = [NSTimer scheduledTimerWithTimeInterval:breakTimeInSeconds target:self selector:@selector(breakTimerFired) userInfo:nil repeats:NO];
 	self.startTime = [NSDate timeIntervalSinceReferenceDate];
 	self.endTime = self.startTime + breakTimeInSeconds;
@@ -121,7 +135,7 @@
 
 - (void)breakTimerFired {
     NSLog(@"Break timer fired.");
-    
+	
     NSInteger intervalTimeInSeconds = self.intervalTime * 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:intervalTimeInSeconds target:self selector:@selector(intervalTimerFired) userInfo:nil repeats:NO];
 	self.startTime = [NSDate timeIntervalSinceReferenceDate];

@@ -25,6 +25,9 @@
 @property (weak) IBOutlet NSProgressIndicator *progressBar;
 @property (weak) IBOutlet NSButton *notificationsButton;
 
+@property (weak) IBOutlet NSTextField *pomodorosThisSession;
+@property (weak) IBOutlet NSTextField *pomodorosToday;
+
 @property NSInteger intervalTime;
 @property NSInteger breakTime;
 @property BOOL notifications;
