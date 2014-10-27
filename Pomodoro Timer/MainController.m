@@ -116,7 +116,8 @@
 	
 	NSUserNotification* notification = [[NSUserNotification alloc] init];
 	[notification setTitle:@"Break"];
-	[notification setInformativeText:[NSString stringWithFormat:@"Rest for %li minutes.",(long)self.breakTime]];
+	if (numPomodorosSession % 4 == 0)
+		[notification setInformativeText:[NSString stringWithFormat:@"Rest for %li minutes.",(long)self.breakTime*3]];
 	
 	NSUserNotificationCenter* center = [NSUserNotificationCenter defaultUserNotificationCenter];
 	[center removeAllDeliveredNotifications];
